@@ -1,0 +1,11 @@
+--find-links=https://girder.github.io/large_image_wheels GDAL
+geopandas
+leafmap
+owslib
+streamlit
+requests
+osmium
+folium
+streamlit_folium
+pandas
+pymongo[srv]
