@@ -105,7 +105,7 @@ def drawMap(location,zoom):
     st.session_state.bounds=st_map['bounds']
 
 #form
-comment = st.text_input("Write your experience on the textbox, zoom the map to the area you have a mapping experience", "")
+comment = st.text_input("Have you ever mapped? Tell us one of your experience.", "")
 
 if st.button('Submit'):
     if comment!="":
