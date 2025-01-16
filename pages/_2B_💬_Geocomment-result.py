@@ -15,8 +15,8 @@ def init_connection():
 
 client = init_connection()
 
-db=client['PoliMappers01']
-collection=db['PoliMappers01']
+db=client['Open-Geodata-Workshop']
+collection=db['Open-Geodata-Workshop']
 result_polygon=pd.DataFrame(list(collection.find().sort("_id", -1).limit(30)))
 
 result_polygon['Polygon']=gpd.GeoSeries.from_wkt(result_polygon['bounds'])
