@@ -57,7 +57,7 @@ def fetch_and_clean_data(url):
     # Fetch data from URL here, and then clean it up.
     return data
 
-osm_input=fetch_and_clean_data('https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607')
+#osm_input=fetch_and_clean_data('https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607')
 
 st.write(osm_input)
 
