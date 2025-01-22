@@ -75,7 +75,7 @@ for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?b
         user.append(o.user)
         geom.append(shape(o.__geo_interface__['geometry']))
         version.append(o.version)
-        tag.append(o.tags)
+        tag.append(str(o.tags))
         #st.write(o.id,o.user,o.version,o.tags,shape(o.__geo_interface__['geometry']))
 
 osm_gpd=gpd.GeoDataFrame({'id':id,'user':user,'tag':tag,'version':version})
