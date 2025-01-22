@@ -4,7 +4,7 @@ from streamlit_folium import st_folium
 import folium
 from folium.features import GeoJsonPopup
 import streamlit as st
-
+from shapely.geometry import shape
 
 
 st.set_page_config(layout="wide")
@@ -68,7 +68,7 @@ START_ZOOM = 16
 features = gpd.GeoDataFrame.from_features(osm_data).set_crs(epsg=4326)
 
 for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607").with_filter(osmium.filter.EntityFilter(osmium.osm.WAY)):
-   st.write(o)
+   st.write(shape(o.__geo_interface__['geometry']))
 
     #for member in o.members:
         #st.write(f"Type: {member.type}  ID: {member.ref}  Role: {member.role}")

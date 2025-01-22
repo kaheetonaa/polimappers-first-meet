@@ -9,3 +9,4 @@ folium
 streamlit_folium
 pandas
 pymongo[srv]
+shapely
