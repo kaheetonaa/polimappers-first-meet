@@ -71,13 +71,13 @@ st.write(features)
 
 for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607").with_areas().with_locations().with_filter(osmium.filter.GeoInterfaceFilter()):
     if o.is_way():
-        id.append(o.id)
+        id.append(str(o.id))
         user.append(o.user)
         geom.append(shape(o.__geo_interface__['geometry']))
         version.append(o.version)
         #st.write(o.id,o.user,o.version,o.tags,shape(o.__geo_interface__['geometry']))
 
-osm_gpd=gpd.GeoDataFrame({'id':id})
+osm_gpd=gpd.GeoDataFrame({'id':id,'user':user,'tag':tag,'version':version},geometry=geom)
 osm_gpd
 
 #osm_gpd['id']=id
