@@ -63,7 +63,7 @@ features = gpd.GeoDataFrame.from_features(osm_data).set_crs(epsg=4326)
 
 for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607").with_locations().with_filter(osmium.filter.GeoInterfaceFilter()):
     if o.is_way():
-        st.write(o)
+        st.write(o.id)
 
     #for member in o.members:
         #st.write(f"Type: {member.type}  ID: {member.ref}  Role: {member.role}")
