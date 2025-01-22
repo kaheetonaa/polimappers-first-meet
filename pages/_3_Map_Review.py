@@ -87,7 +87,7 @@ for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?b
 #osm_gpd['tag']=tag
 #osm_gpd['version']=version
 
-building=features[features.geometry.type=='MultiPolygon'][features.tag.notnull()]
+building=features[features.geometry.type=='MultiPolygon'][features.building.notnull()]
 #highway=features[features.geometry.type=='LineString'][features.highway.notnull()]
 
 building_style = {"fillColor": "red", "fillOpacity": 0.2,"color":"red"}
