@@ -78,8 +78,8 @@ for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?b
         tag.append(str(o.tags))
         #st.write(o.id,o.user,o.version,o.tags,shape(o.__geo_interface__['geometry']))
 
-features=gpd.GeoDataFrame({'id':id,'tag':tag,'version':version},geometry=gpd.GeoSeries(geom)).set_crs(epsg=4326)
-features
+features=gpd.GeoDataFrame({'id':id,'user':user,'tag':tag,'version':version},geometry=gpd.GeoSeries(geom)).set_crs(epsg=4326)
+features.plot()
 
 #osm_gpd['id']=id
 #osm_gpd['user']=user
@@ -87,7 +87,7 @@ features
 #osm_gpd['tag']=tag
 #osm_gpd['version']=version
 
-building=features[features.geometry.type=='MultiPolygon'][features.tag.notnull()]
+building=features
 #highway=features[features.geometry.type=='LineString'][features.highway.notnull()]
 
 building_style = {"fillColor": "red", "fillOpacity": 0.2,"color":"red"}
