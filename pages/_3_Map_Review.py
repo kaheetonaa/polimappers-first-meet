@@ -52,15 +52,15 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-input_osm=osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607",osmium.osm.WAY)
-osm_data= input_osm.with_filter(osmium.filter.GeoInterfaceFilter()) #.with_areas()
+
+osm_data= osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607").input_osm.with_areas().with_filter(osmium.filter.GeoInterfaceFilter())
 START_LOCATION = [9.227909,45.478059]
 START_ZOOM = 16
 
 features = gpd.GeoDataFrame.from_features(osm_data).set_crs(epsg=4326)
 
-#for o in input_osm:
-#    print(o)
+for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607",osmium.osm.WAY):
+   print(o)
     #for member in o.members:
         #st.write(f"Type: {member.type}  ID: {member.ref}  Role: {member.role}")
 
