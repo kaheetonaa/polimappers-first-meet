@@ -87,7 +87,7 @@ osm_gpd.plot()
 #osm_gpd['tag']=tag
 #osm_gpd['version']=version
 
-building=features[features.geometry.type=='MultiPolygon'][features.building.notnull()]
+building=osm_gpd#features[features.geometry.type=='MultiPolygon'][features.building.notnull()]
 #highway=features[features.geometry.type=='LineString'][features.highway.notnull()]
 
 building_style = {"fillColor": "red", "fillOpacity": 0.2,"color":"red"}
