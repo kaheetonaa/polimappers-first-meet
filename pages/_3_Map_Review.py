@@ -78,8 +78,8 @@ for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?b
         tag.append(str(o.tags))
         #st.write(o.id,o.user,o.version,o.tags,shape(o.__geo_interface__['geometry']))
 
-osm_gpd=gpd.GeoDataFrame({'id':id,'user':user,'tag':tag,'version':version},geometry=gpd.GeoSeries(geom)).set_crs(epsg=4326)
-osm_gpd.plot()
+#osm_gpd=gpd.GeoDataFrame({'id':id,'user':user,'tag':tag,'version':version},geometry=gpd.GeoSeries(geom)).set_crs(epsg=4326)
+#osm_gpd.plot()
 
 #osm_gpd['id']=id
 #osm_gpd['user']=user
