@@ -55,7 +55,7 @@ st.markdown("""
 
 osm_input=osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607").with_filter(osmium.filter.EntityFilter(osmium.osm.WAY))
 
-osm_data= osm_input.with_filter(osmium.filter.GeoInterfaceFilter())
+osm_data= osm_input.with_areas().with_filter(osmium.filter.GeoInterfaceFilter())
 START_LOCATION = [9.227909,45.478059]
 START_ZOOM = 16
 
