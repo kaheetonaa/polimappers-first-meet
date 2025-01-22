@@ -59,8 +59,8 @@ START_ZOOM = 16
 
 features = gpd.GeoDataFrame.from_features(osm_data).set_crs(epsg=4326)
 
-for o in input_osm:
-    print(o)
+#for o in input_osm:
+#    print(o)
     #for member in o.members:
         #st.write(f"Type: {member.type}  ID: {member.ref}  Role: {member.role}")
 
