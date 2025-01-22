@@ -87,7 +87,7 @@ features
 #osm_gpd['tag']=tag
 #osm_gpd['version']=version
 
-building=features[features.geometry.type=='MultiPolygon'][features['tag']=='building=yes']
+building=features
 #highway=features[features.geometry.type=='LineString'][features.highway.notnull()]
 
 building_style = {"fillColor": "red", "fillOpacity": 0.2,"color":"red"}
