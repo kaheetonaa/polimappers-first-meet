@@ -56,6 +56,8 @@ osm_data= osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?
 START_LOCATION = [9.227909,45.478059]
 START_ZOOM = 16
 
+st.write(osm_data)
+
 features = gpd.GeoDataFrame.from_features(osm_data).set_crs(epsg=4326)
 
 building=features[features.geometry.type=='MultiPolygon'][features.building.notnull()]
