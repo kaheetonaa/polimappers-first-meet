@@ -67,7 +67,7 @@ geom=[]
 tag=[]
 version=[]
 
-st.write(features)
+#st.write(features)
 
 for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607").with_areas().with_locations().with_filter(osmium.filter.GeoInterfaceFilter()):
     if o.is_way():
