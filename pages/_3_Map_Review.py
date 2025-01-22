@@ -58,8 +58,9 @@ START_ZOOM = 16
 
 features = gpd.GeoDataFrame.from_features(osm_data).set_crs(epsg=4326)
 
-for member in osm_data.members:
-    st.write(f"Type: {member.type}  ID: {member.ref}  Role: {member.role}")
+for o in osm_data:
+    for member in o.members:
+        st.write(f"Type: {member.type}  ID: {member.ref}  Role: {member.role}")
 
 building=features[features.geometry.type=='MultiPolygon'][features.building.notnull()]
 #highway=features[features.geometry.type=='LineString'][features.highway.notnull()]
