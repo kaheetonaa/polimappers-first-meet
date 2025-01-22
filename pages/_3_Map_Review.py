@@ -63,7 +63,7 @@ features = gpd.GeoDataFrame.from_features(osm_data).set_crs(epsg=4326)
 
 id=[]
 user=[]
-shape=[]
+geom=[]
 tag=[]
 version=[]
 
@@ -74,11 +74,11 @@ for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?b
     if o.is_way():
         id.append(o.id)
         user.append(o.user)
-        #shape.append(shape(o.__geo_interface__['geometry']))
+        geom.append(shape(o.__geo_interface__['geometry']))
         version.append(o.version)
         #st.write(o.id,o.user,o.version,o.tags,shape(o.__geo_interface__['geometry']))
 
-st.write(id)
+st.write(geom)
 
 building=features[features.geometry.type=='MultiPolygon'][features.building.notnull()]
 #highway=features[features.geometry.type=='LineString'][features.highway.notnull()]
