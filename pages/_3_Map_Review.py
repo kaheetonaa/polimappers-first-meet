@@ -65,8 +65,7 @@ for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?b
     if o.is_way():
         st.write(o.user,shape(o.__geo_interface__['geometry']))
 
-    #for member in o.members:
-        #st.write(f"Type: {member.type}  ID: {member.ref}  Role: {member.role}")
+
 
 building=features[features.geometry.type=='MultiPolygon'][features.building.notnull()]
 #highway=features[features.geometry.type=='LineString'][features.highway.notnull()]
