@@ -52,14 +52,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-@st.cache_data
-def fetch_and_clean_data(url):
-    # Fetch data from URL here, and then clean it up.
-    return data
 
-osm_input=fetch_and_clean_data('https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607')
 
-#st.write(osm_input)
 
 osm_data= osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607").with_areas().with_filter(osmium.filter.GeoInterfaceFilter())
 START_LOCATION = [9.227909,45.478059]
