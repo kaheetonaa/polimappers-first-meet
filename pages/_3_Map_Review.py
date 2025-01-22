@@ -59,7 +59,7 @@ def fetch_and_clean_data(url):
 
 #osm_input=fetch_and_clean_data('https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607')
 
-st.write(osm_input)
+#st.write(osm_input)
 
 osm_data= osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607").with_filter(osmium.filter.EntityFilter(osmium.osm.WAY)).with_areas().with_filter(osmium.filter.GeoInterfaceFilter())
 START_LOCATION = [9.227909,45.478059]
