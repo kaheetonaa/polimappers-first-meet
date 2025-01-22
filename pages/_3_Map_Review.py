@@ -80,11 +80,11 @@ for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?b
 osm_gpd=gpd.GeoDataFrame({'id':id})
 osm_gpd
 
-osm_gpd['id']=id
-osm_gpd['user']=user
-osm_gpd['geom']=geom
-osm_gpd['tag']=tag
-osm_gpd['version']=version
+#osm_gpd['id']=id
+#osm_gpd['user']=user
+#osm_gpd['geom']=geom
+#osm_gpd['tag']=tag
+#osm_gpd['version']=version
 
 building=features[features.geometry.type=='MultiPolygon'][features.building.notnull()]
 #highway=features[features.geometry.type=='LineString'][features.highway.notnull()]
