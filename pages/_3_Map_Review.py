@@ -59,6 +59,8 @@ START_ZOOM = 16
 
 features = gpd.GeoDataFrame.from_features(osm_data).set_crs(epsg=4326)
 
+features
+
 for o in osmium.FileProcessor("https://api06.dev.openstreetmap.org/api/0.6/map?bbox=9.21734%2C45.47109%2C9.23813%2C45.48607").with_filter(osmium.filter.EntityFilter(osmium.osm.WAY)):
    st.write(o)
     #for member in o.members:
