@@ -93,8 +93,10 @@ def style_function(feature):
 
 @st.fragment
 def drawMap(location,zoom):
+    attr="Tiles (C) Esri -- Source: Esri, i-cubed, USDA, USG"
+    tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
     map = folium.Map(
-    location=location, zoom_start=zoom, max_zoom=21)
+    location=location,attr=attr,tiles=tiles, zoom_start=zoom, max_zoom=21)
     st_map= st_folium(
     map,
     width='100%',
