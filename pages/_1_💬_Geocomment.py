@@ -15,8 +15,8 @@ def init_connection():
 
 client = init_connection()
 
-db=client['PoliMappers01']
-collection=db['PoliMappers01']
+db=client['Rovereto']
+collection=db['Rovereto']
 
 
 st.markdown("""
