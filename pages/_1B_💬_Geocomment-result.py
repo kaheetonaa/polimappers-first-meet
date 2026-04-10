@@ -71,9 +71,9 @@ st.markdown("""
 if st.button('Refresh'):
     #This would empty everything inside the container
     st.empty()
-
+tiles="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
 map = folium.Map(
-    location=[0,0], zoom_start=5, max_zoom=21)
+    location=[0,0],tiles=tiles, zoom_start=5, max_zoom=21)
 for _, r in result_polygon.iterrows():
     # Without simplifying the representation of each borough,
     # the map might not be displayed
