@@ -105,11 +105,11 @@ def drawMap(location,zoom):
     st.session_state.bounds=st_map['bounds']
 
 #form
-comment = st.text_input("Write your experience on the textbox, zoom the map to the area you have a mapping experience", "")
+comment = st.text_input("Dove sono Turchia e Syria? Ingrandite la mappa e scrivete qui il nome del paese con il numero stimato di abitanti.", "")
 
-if st.button('Submit'):
+if st.button('Consegna'):
     if comment!="":
-        st.write("✅You submit the area at coordinate",str(st.session_state.location),'at the zoom of',str(st.session_state.zoom),'with the story of', comment)
+        st.write("✅Hai consegnato l'area alle coordinate",str(st.session_state.location),'al livello di zoom di',str(st.session_state.zoom),'con la risposta', comment)
         post={'bounds':'POLYGON (('+str(st.session_state.bounds['_southWest']['lng'])+' '+str(st.session_state.bounds['_southWest']['lat'])+','+str(st.session_state.bounds['_southWest']['lng'])+' '+str(st.session_state.bounds['_northEast']['lat'])+','+str(st.session_state.bounds['_northEast']['lng'])+' '+str(st.session_state.bounds['_northEast']['lat'])+','+str(st.session_state.bounds['_northEast']['lng'])+' '+str(st.session_state.bounds['_southWest']['lat'])+','+str(st.session_state.bounds['_southWest']['lng'])+' '+str(st.session_state.bounds['_southWest']['lat'])+'))','comment':comment,'center':'POINT ('+str(st.session_state.location[1])+' '+str(st.session_state.location[0])+')','zoom':st.session_state.zoom}
         collection.insert_one(post)
 
