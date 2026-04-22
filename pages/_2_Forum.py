@@ -1,7 +1,7 @@
 import streamlit as st
 from pymongo import MongoClient
 st.set_page_config(
-  page_title="🌐 EuthMappers quizz",
+  page_title="🌐 Rovereto quizz",
   page_icon="❓",
   layout="wide"
 )
@@ -54,9 +54,9 @@ def init_connection():
     return MongoClient("mongodb+srv://kuquanghuy:quanghuy123456@cluster0.6mzug.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 client = init_connection()
 
-db=client['EuthMappers_Forum_241126']
-collection=db['EuthMappers_Forum_241126']
-st.title('What is Sustainable Development ?')
+db=client['rovereto']
+collection=db['rovereto-client']
+st.title('mappatura del territorio in caso di calamità ?')
 container1 = st.container()
 def submit_answer():
         if (comment!=""):
@@ -68,7 +68,6 @@ def submit_answer():
         else:
                 st.warning('Nessuna domanda scritta!')
 with container1:
-    st.html("<img src='https://raw.githubusercontent.com/kaheetonaa/streamlit_quizz_template_euth/refs/heads/main/asset/logo.png' class='center'/>")
     st.markdown(""" ___""")
     if "answer_submitted" not in st.session_state:
         comment = st.text_input("Domanda per la mappatura del territorio in caso di calamità ?", "")
