@@ -55,7 +55,7 @@ def init_connection():
 client = init_connection()
 
 db=client['rovereto']
-collection=db['rovereto-client']
+collection=db['rovereto-forum']
 st.title('mappatura del territorio in caso di calamità ?')
 container1 = st.container()
 def submit_answer():
