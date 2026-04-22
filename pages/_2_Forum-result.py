@@ -85,7 +85,7 @@ result=pd.DataFrame(list(collection.find().sort("_id", -1)))
 
 st.title('Domanda per la mappatura del territorio in caso di calamità ?')
 
-st.write(result)
+#st.write(result)
 
 for i in range(len(result)):
   comment=result['comment'][i]
