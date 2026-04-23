@@ -83,7 +83,7 @@ db=client['rovereto']
 collection=db['rovereto-forum']
 result=pd.DataFrame(list(collection.find().sort("_id", -1)))
 
-st.title('Domanda per la mappatura del territorio in caso di calamità ?')
+st.title('Domande')
 
 #st.write(result)
 

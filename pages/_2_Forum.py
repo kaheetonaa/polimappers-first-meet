@@ -56,7 +56,7 @@ client = init_connection()
 
 db=client['rovereto']
 collection=db['rovereto-forum']
-st.title('mappatura del territorio in caso di calamità ?')
+st.title('Domande')
 container1 = st.container()
 def submit_answer():
         if (comment!=""):
