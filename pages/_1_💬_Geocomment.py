@@ -111,11 +111,7 @@ comment = st.text_input("Dove sono Turchia e Syria? Ingrandite la mappa e scrive
 
 if st.button('Consegna'):
     if comment!="":
-<<<<<<< HEAD
         st.write("✅Ha consegnato l'area alle coordinate",str(st.session_state.location),'at the zoom of',str(st.session_state.zoom),'with the story of', comment)
-=======
-        st.write("✅Hai consegnato l'area alle coordinate",str(st.session_state.location),'al livello di zoom di',str(st.session_state.zoom),'con la risposta', comment)
->>>>>>> 94a0444702d374b2d989b52602ca2447e541a814
         post={'bounds':'POLYGON (('+str(st.session_state.bounds['_southWest']['lng'])+' '+str(st.session_state.bounds['_southWest']['lat'])+','+str(st.session_state.bounds['_southWest']['lng'])+' '+str(st.session_state.bounds['_northEast']['lat'])+','+str(st.session_state.bounds['_northEast']['lng'])+' '+str(st.session_state.bounds['_northEast']['lat'])+','+str(st.session_state.bounds['_northEast']['lng'])+' '+str(st.session_state.bounds['_southWest']['lat'])+','+str(st.session_state.bounds['_southWest']['lng'])+' '+str(st.session_state.bounds['_southWest']['lat'])+'))','comment':comment,'center':'POINT ('+str(st.session_state.location[1])+' '+str(st.session_state.location[0])+')','zoom':st.session_state.zoom}
         collection.insert_one(post)
 
